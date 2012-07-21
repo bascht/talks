@@ -1,0 +1,31 @@
+body {
+}
+.slide {
+  background-image: linear-gradient(bottom, rgb(219,219,219) 21%, rgb(255,255,255) 85%);
+  background-image: -o-linear-gradient(bottom, rgb(219,219,219) 21%, rgb(255,255,255) 85%);
+  background-image: -moz-linear-gradient(bottom, rgb(219,219,219) 21%, rgb(255,255,255) 85%);
+  background-image: -webkit-linear-gradient(bottom, rgb(219,219,219) 21%, rgb(255,255,255) 85%);
+  background-image: -ms-linear-gradient(bottom, rgb(219,219,219) 21%, rgb(255,255,255) 85%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.21, rgb(219,219,219)),
+    color-stop(0.85, rgb(255,255,255))
+  );
+}
+
+.content {
+  font-family: "Ubuntu", Courier, monospace;
+}
+
+.subsection h1,
+.subsection h2 {
+  font-weight: bold;
+  background-color: #750909;
+}
+
+h1, h2 {
+  /* color: rgb(79, 180, 226); */
+}
