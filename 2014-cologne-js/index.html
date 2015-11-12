@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>What is a »full« stack, anyways?</title>
+
+    <meta name="description" content="What is a »full« stack, anyways?">
+    <meta name="author" content="Sebastian Schulze">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,300,400italic' rel='stylesheet' type='text/css'>
+
+    <!-- If the query includes '-printpdf', include the PDF  sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <style type="text/css">
+
+      #wrap-current-slide {
+        display: none;
+      }
+
+      .emboss {
+        text-shadow: 0 1px 0 #ccc,
+                     0 2px 0 #c9c9c9,
+                     0 3px 0 #bbb,
+                     0 4px 0 #b9b9b9,
+                     0 5px 0 #aaa,
+                     0 6px 1px rgba(0,0,0,.1),
+                     0 0 5px rgba(0,0,0,.1),
+                     0 1px 3px rgba(0,0,0,.3),
+                     0 3px 5px rgba(0,0,0,.2),
+                     0 5px 10px rgba(0,0,0,.25),
+                     0 10px 10px rgba(0,0,0,.2),
+                     0 20px 20px rgba(0,0,0,.15);
+      }
+      h1,h2,h3,h4,h5 { text-transform: none !important;}
+      * { font-family: 'Merriweather', serif !important; }
+      pre, code, code *, pre * { font-family: 'Source Code Pro for Powerline', monospace !important; }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+<section>
+  <h1 style="text-transform:none; font-size:2.5em;">What is a »full« stack, anyways?</h1>
+  <h3><img class="" src="./images/colognejs-logo.png" alt="Cologne.js" /></h3>
+  <p>
+    <small>1st international Heartbleed-Day</small>
+    <hr/>
+    <small>@bascht</small>
+  </p>
+</section>
+
+<section>
+  <img style="border:0; background: none; box-shadow:none;" src="./images/galileo.png" alt="Galileo" />
+  <p style="font-size:0.5em; margin-top: 1em;">Galileo Galilei - 1636</p>
+  <aside class="notes"></aside>
+</section>
+
+<section>
+  <span>DevOps</span>
+  <aside class="notes" data-markdown>
+* Development und Operations kombiniert
+* In den letzten 5 Jahren richtig Schwung bekommen
+* Enterprise DevOps 3.11 Certified Engineer im Profil
+  </aside>
+</section>
+<section>
+  <span>Death Ops!</span>
+</section>
+<section>
+  <span>Deaf Ops?</span>
+</section>
+
+
+<section>
+  <h3>Silos</h3>
+  <img src="./images/silos.jpg" alt="Silos" />
+</section>
+
+<section>
+  <h3>Rollen<span class="fragment">verteilung</span></h3>
+  <img src="./images/rollen.jpg" alt="Rollen" />
+  <small style="font-size:0.2em;">Creative Commons Attribution 2.0 Generic (https://commons.wikimedia.org/wiki/File:IBM_System_360_tape_drives.jpg)</small>
+  <aside class="notes" data-markdown>
+* Nicht nur Rollen-Verteilung, sondern auch Tausch
+* …da seid z.B. ihr
+</aside>
+</section>
+
+<section>
+  <h2>…für Entwickler…</h2>
+  <aside class="notes" data-markdown>
+## Drama für die BOFH
+
+OMG - sie kommen, um mich mit Chef & Puppet zu ersetzen, mir meine
+Datenbank-Passworte wegzunehmen und nachzuschauen ob der Hosting-Provider
+wirklich an Downtime wirklich schuld war. (meiner Meinung kann man so einige
+"Admins" auch mit 2 großen .ksh Scripten ersetzen, dazu braucht es kein Puppet)
+
+## Drama für die Entwickler
+
+OMG - ich hab doch jetzt schon den ganzen Bugtracker voll und jetzt soll ich
+mich auch noch um den Betrieb kümmern? Am Wochenende, oder wann? Wenn die
+anderen jetzt Rootrechte finden die ja raus dass nicht die Storage zu lahm,
+sondern unsere IO Komponente zu dämlich war.
+  </aside>
+</section>
+
+<section>
+  <h2>…für das Management…</h2>
+  <aside class="notes" data-markdown>
+* feuchte Traum des Personalmanagers: 
+* Wenn sich eine Person um Entwicklung *und* Betrieb nur noch eine 
+  Person kümmern muss, kann man ja einen von beiden feuern.
+* Für euch heißt das Hauptsächlich: Auch mal switchen!
+* Und v.a. Dingen: Wissen anreichern & austauschen
+  </aside>
+</section>
+
+
+<section>
+<blockquote style="background:none;">Specialization is for insects.</blockquote>
+<p style="font-size:0.5em; margin-top: 1em;">-- Robert A. Heinlein</p>
+</section>
+
+<section>
+  <h3>Rollentausch</h3>
+</section>
+<section>
+  <pre class=""><code class="css">
+  * { 
+    color: 'Kornblumenblau' !important; 
+  }
+  </code></pre>
+</section>
+<section>
+  <pre class=""><code class="javascript">
+  $$('I'){
+    $('will.wrap').each(function('until'){ 
+      return that['crap'].works; 
+    });
+  };;;; // eat this, jslint!
+  </code></pre>
+</section>
+<section>
+  <pre class=""><code class="bash">
+    $ sudo sudo su -c "sudo do --what 'I want'"
+  </code></pre>
+  <aside class="notes" data-markdown>
+* Kleine Festungen, in denen der Admin sich verstecken kann
+* Code-Schnipsel die nur ihr versteht
+* Libraries
+  </aside>
+</section>
+
+<section>
+  <h3>Kleine Trutzburgen</h3>
+  <img src="./images/motor.jpg" alt="Legacy System" /><br/>
+
+  <small style="font-size:0.2em;">Quelle: Bundesarchiv, Bild 183-D0118-0014-002 / CC-BY-SA</small>
+  <aside class="notes" data-markdown>
+* Damit der Admin seinen Job behält und der
+  Designer seine Grafiken weiterbauen kann.
+  </aside>
+</section>
+
+<section>
+  <h3>Werkzeug</h3>
+  <pre class="fragment"><code class="ruby">
+    package { 'libopenssl':
+      ensure => '1.0.1e-16.el6_5.7'
+    }
+  </code></pre>
+  <aside class="notes" data-markdown>
+* Damit Deppen wie ich völlig unverdient eine Mobile Webseite bauen können.
+  </aside>
+</section>
+
+<!-- BASH QUOTE
+<section>
+<blockquote> ... there are dark corners in the Bourne shell, and people use all of them.  </blockquote>
+<p style="font-size:0.5em; margin-top: 1em;">-- Chet Ramey</p>
+</section>
+-->
+
+<section>
+  <h2>Tools</h2>
+  <span class="fragment highlight-blue">ansible</span><span class="fragment highlight-blue">bcfg2</span><span class="fragment highlight-blue">cdist</span><span class="fragment highlight-blue">chef</span><span class="fragment highlight-blue">cfengine</span><span class="fragment highlight-blue">isconf</span><span class="fragment highlight-blue">juju</span><span class="fragment highlight-blue">lcfg</span>
+  <span class="fragment highlight-blue">ocsinventoryngwithglpi</span><span class="fragment highlight-blue">opsi</span><span class="fragment highlight-blue">pikt</span>
+  <span class="fragment highlight-blue">puppet</span><span class="fragment highlight-blue">quattor</span><span class="fragment highlight-blue">radmind</span><span class="fragment highlight-blue">rex</span>
+  <span class="fragment highlight-blue">rundeck</span><span class="fragment highlight-blue">smartfrog</span><span class="fragment highlight-blue">salt</span><span class="fragment highlight-blue">spacewalk</span>
+</section>
+
+<section>
+  <p class="fragment fade-in">Verantwortung</p>
+  <p class="fragment roll-in">…und grüne Builds.</p>
+</section>
+
+<section>
+  <pre><code class="javascript">
+
+  var management, kunde;
+
+  function heilewelt(anforderung) {
+      var idealismus;
+      return mehrwert;
+  }
+
+  </code></pre>
+  <img class="fragment roll-in" style="box-shadow: none; border: none; background:none;" src="./images/network-server.png" alt="Eimerkette" />
+</section>
+
+<section>
+  <img class="fragment roll-in" src="./images/eimerkette.jpg" alt="Eimerkette" />
+  <aside class="notes" data-markdown>
+    * Wie sieht bei euch ein "Build" aus?
+    * Wie und wo könnten Nebeneffekte entstehen?
+    * Wie kommt eure Anwendung live?
+  </aside>
+</section>
+
+<section>
+  <h2>Releases.</h2>
+  <aside class="notes" data-markdown>
+  * Keine silbernen Kugeln, keine Tools hypen.
+  * Ich werde erfreulich wenig über Deployment reden.
+  * Wenn es zu schnell wird: HALT RUFEN
+  * Wollte ich schon immer mal sagen: Das ist ein Prozess und kein Zustand!
+  * Wenn ihr danach mehr offene Fragen habt, habe ich mein Ziel erreicht.
+  * Kleines Gedankenexperiment, um zu sehen ob eure Probleme wirklich im Deployment liegen
+  </aside>
+</section>
+
+<section data-transition="cube" >
+  <p data-fragment-index="1" style="margin-right: 2em" class="fragment fade-in">Stellt euch vor…</p>
+  <p data-fragment-index="2" style="margin-left: 2em" class="fragment fade-in">…es ist Freitag.</p>
+  <aside class="notes" data-markdown>
+  * Stellt euch vor, es ist Freitag. 
+  * Langes Wochenende. Kollege ruft euch an
+  * Auf dem Weg zum Flieger – hat sich um zwei Tage vertan (6-wöchiger Urlaub in Laos)
+  * Gerade noch *extrem* wichtigen Feature-Branch gemerged
+  * Tests sahen gut aus - kannst Du das bitte noch mergen?
+  * Ist nicht viel. Wird morgen via Background-Worker mit neuem personalisiertem Newsletter  an alle User.
+  * Wer immer noch glaubt das Deployment sein größtes Problem ist: Gratulation 
+  </aside>
+</section>
+
+<section>
+  <h3>Euer Deployment-Graph…</h3>
+  <img class="fragment roll-in" style="height:13em;" src="./images/deploymentgraph.png" alt="Deployment Graph" />
+  <h4 class="fragment fade-in">…skaliert <strong>nicht</strong></h4>
+</section>
+
+<section>
+  <h2>Bauchweh-Metrik</h2>
+  <br/>
+  <p>Wer versteht alle base / helper / tools / domain Klassen noch?</p>
+  <hr>
+  <p>Wer versteht euer Deployment?</p>
+</section>
+
+<section>
+  <h2>Busnumber</h2>
+  <img class="fragment roll-in" style="height:13em;" src="./images/deploybus.png" alt="Deployment Bus" />
+  <aside class="notes" data-markdown>
+    * Wie viele Leute überfahren damit das Feature nicht mehr live geht.
+    * Wie hoch wäre eure Deployment-Busnumber?
+  </aside>
+</section>
+
+<section>
+  <h3>Warum nicht…</h3>
+  <ul>
+    <li class="fragment fade-in">So oft wie möglich deployen?</li>
+    <li class="fragment fade-in">Die neuen Mitarbeiter deployen lassen?</li>
+    <li class="fragment fade-in">Still und leise im Hintergrund deployen?</li>
+  </ul>
+  <aside class="notes" data-markdown>
+  * Das Deployment so oft wie möglich zu machen
+  * Neue Mitarbeiter sofort deployen zu lassen
+    * Ihr werdet eure Infrastrukturm it anderen Augen sehen!
+  * Deployments zu fahren, ohne dass es jemand merkt!
+  * Warum ist es also so schwer?
+  </aside>
+</section> 
+
+<section>
+  <img src="images/profoundprogrammerlive.jpg" alt="" />
+  <p style="font-size:0.5em; margin-top: 1em; font-">&copy; 2013 &mdash; theprofoundprogrammer.com</p>
+</section>
+
+<section>
+  <h1 style="font-size: 7em" class="fragment fade-in">2014</h1>
+  <h2 class="fragment fade-in">Infrastruktur-Code ist auch Code!</h2>
+  <aside class="notes"> </aside>
+</section>
+
+<section>
+  <p>Entstehen eure Probleme…</p>
+  <br/>
+  <dl>
+    <dt><span class="fragment highlight-blue">…im Code?</span></dt>
+    <dt><span class="fragment highlight-blue">…in der Serverkonfiguration?</span></dt>
+    <dt><span class="fragment highlight-blue">…beim Rollout?</span></dt>
+  </dl>
+  <br/>
+  <p class="fragment">Im Zusammenspiel?</p>
+  <aside class="notes" data-markdown>Also *falls* ihr eure Serverkonfiguration in einem Repository habt…</aside>
+</section>
+
+<section>
+  <p>Keine Ausreden mehr.</p>
+</section>
+
+<section>
+  <ul>
+    <li class="fragment fade-in">Infrastruktur Problem?
+      <ul><li class="fragment fade-in">Bug-Ticket</li></ul>
+    </li>
+    <li class="fragment fade-in">Infrastruktur Änderung?
+      <ul><li class="fragment fade-in">Feature-Ticket</li></ul>
+    </li>
+    <li class="fragment fade-in">Großer Feature-Rollout steht bevor?
+      <ul><li class="fragment fade-in">Story-Ticket</li></ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h4>Kein Commit ohne Ticket.</h4>
+  <h4>Kein Major-Release ohne Ticket.</h4>
+  <aside class="notes" data-markdown>
+    * Mag selbstverständlich klingen, aber in größeren Projekten……
+    * Ist eure Versicherung. Und: INSTANT DOCUMENTATION
+    * Und ohne Doku + Ticket ist ein einzelner Change auf dem Live-Server nützlich wie ein Blindarm!
+  </aside>
+</section>
+
+<section>
+  <h2>Code-Reviews!</h2>
+  <ul>
+    <li class="fragment"><em><strong class="fragment highlight-red">Auch</strong> für Infrastruktur.</em></li>
+    <li class="fragment"><strong class="fragment highlight-blue">Erst recht</strong> für Infrastruktur.</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Integration</h3>
+    <p class="fragment fade-in">Gibt es Release-Branches für euer Infrastruktur-Repository?</p>
+    <p class="fragment fade-in">Zu welchem Infrastruktur-Branch gehört<br/> Application-Branch <code style="font-size:0.8em">feature/gh-1382?</code></p>
+    <p class="fragment fade-in">Läuft Software <code style="font-size:0.8em">4.2.23</code> auch noch mit<br/>Migrations-Stand <code style="font-size:0.8em">2.4.21-hotfix?</code></p>
+    <p class="fragment fade-in">Wie geht es eurem Frontend, wenn es kein Backend mehr gibt?</p>
+  <aside class="notes" data-markdown>Alles fragen die ihr euch eigentlich selbst beantworten müsstet</aside>
+</section>
+
+<section>
+  <h3>Wie sieht euer Build aus?</h3>
+    <img class="fragment fade-in" style="background: none; box-shadow: none; border:0" src="./images/matroshkas.png" alt="Alles was…" />
+    <small style="font-size:0.2em;">Quelle: GFDL image by user Fanghong. Creative Commons Attribution-Share Alike 3.0 Unported</small>
+  <aside class="notes markdown">
+* Mir völlig egal wie ihr baut und auf welcher Plattform
+* Wichtig - und das ist kein Kunstwort: Repeatable Builds!
+* Beispiel vom E42 Projekt: Teamcity haut Maven an, Maven haut Rake an,
+  Rake haut Grunt an, Grunt haut Bower an, Bower haut node an, das alles
+  kommt dann in ein PDF
+  </aside>
+</section>
+
+<!-- DOKUMENTATION -->
+
+<section>
+  <h1>Dokumentation</h1>
+  <h5>(Donnergrollen)</h5>
+</section>
+
+<section>
+  <h2>CLI > Code > Wiki</h2>
+  <pre><code class="bash">
+  $ bin/deploy --wat?
+  </code></pre>
+</section>
+
+<section>
+  <h3>Das Firmenwiki</h3>
+  <img class="fragment" src="./images/tumbleweed.gif" style="width: 8em;" align="left" alt="Crickets" />
+  <ul>
+    <li class="fragment fade-in">Neue Mitarbeiter?</li>
+    <li class="fragment fade-in">Alte Hostnamen?</li>
+    <li class="fragment fade-in">Kreuz-Referenzen!</li>
+    <li class="fragment fade-in">Makros?</li>
+    <li class="fragment fade-in">Kopierbare Kommandos?</li>
+  </ul>
+  <aside class="notes">Wo wir gerade bei Kommandos sind</aside>
+</section>
+
+<!-- TOOLS -->
+
+<section>
+  <h2>Eure Toolchain</h2>
+</section>
+
+<section>
+  <img class="fragment fade-in" style="border:0" src="./images/alleswas.png" alt="Alles was…" />
+  <ul>
+    <li class="fragment fade-in">versioniert</li>
+    <li class="fragment fade-in">korrekt benamt</li>
+    <li class="fragment fade-in">dokumentiert</li>
+    <li class="fragment fade-in">selbsterklärend</li>
+    <li class="fragment fade-in">umgebungsunabhängig</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Y.A.G.N.I!</h2>
+  <h5>vs.</h5>
+  <h2>A.Y.G.N.I.A.L.O.?</h2>
+  <aside class="notes" data-markdown>
+    * You aint gonna need it
+    * Are you gonna need it at least once?
+    * Manchmal berechtigt
+    * Im Zweifel bringt es euch genau das <strong>eine</strong> Mal um
+    * Mal ehrlich: Wie viele Firmen haben ihre Business-Logik in ~/.bash_history
+  </aside>
+</section>
+
+
+<!-- RUBY UND SCRIPTING IM ALLGEMEINEN -->
+
+<section><h3>Hübsch verpacken.</h3></section>
+
+<section data-transition:"none"><pre style="font-size:1.5em; margin:1.5em;" class="fragment fade-in"><code class="bash">#!/bin/sh</code></pre></section>
+<section><pre style="font-size:1.5em; margin:1.5em;" ><code class="bash">#!/usr/bin/env ruby</code></pre></section>
+
+<section>
+<blockquote> ... there are dark corners in the Bourne shell, and people use all of them.  </blockquote>
+<p style="font-size:0.5em; margin-top: 1em;">--Chet Ramey</p>
+
+<br/>
+<br/>
+  <pre class="fragment"><code class="bash">
+  [ 1 -eq 1 ] && [ -n "`echo true 1>&2`" ] # true
+  [ 1 -eq 2 ] && [ -n "`echo true 1>&2`" ] # (no output)
+  </code></pre>
+<br/>
+<br/>
+</section>
+
+
+<section>
+  <h3>Für den Fehlerfall bauen</h3>
+  <img src="./images/dogjump.jpg" alt="What could go wrong?" style="width: 7em;" />
+  <ul style="font-size:0.7em;">
+    <li class="fragment fade-in">Wie sehen eure Fehlerseiten aus?</li>
+    <li class="fragment fade-in">Kann jeder Layer kaputt gehen?</li>
+    <li class="fragment fade-in">Wie schnell könnt ihr zurückrollen?</li>
+    <li class="fragment fade-in">Könnt ihr Features deaktivieren?</li>
+    <li class="fragment fade-in">Könnt ihr stale content ausliefern?</li>
+  </ul>
+<aside class="notes">
+  Beispiel Varnish - NGINX - App - Backend - Datenbank - Externe Dienstleister STale ?
+</aside>
+</section>
+
+<section>
+  <h2>Restore &gt; Backup</h2>
+  <aside class="notes">
+    Lieber etwas nicht backuppen können, als etwas nicht restoren zu können.
+  </aside>
+</section>
+
+<section>
+  <h3>Eure Toolchain wird wertvoller,<br/>je öfter ihr sie ausführt.</h3>
+</section>
+
+<section>
+  <h2>Mitarbeiter des Monats</h2>
+  <img class="fragment fade-in" style="box-shadow: none; background:none; border:0;width: 250px;" src="./images/employee.png" alt="Alles was…" />
+  <aside class="notes">
+    * Führt Unit Tests aus
+    * Führt Integrationtests aus
+    * Führt Acceptance Tests aus
+    * Provisioniert Maschinen
+    * Rollt Software aus
+    * Holt das erste Feedback ein
+  </aside>
+</section>
+
+<section>
+  <h3>Deployment ist nicht der <u>letzte</u> Schritt!</h3>
+  <aside class="notes" data-markdown>
+    * Deploy via Capistrano in Lokale VM
+    * Wiederverwenden der Bootstrap-Scripte als Vagrant Bootstrap (statt Veewee)
+  </aside>
+</section>
+
+<section>
+  <h3>Lebenszeichen sofort nach dem Deployment einsammeln.</h3>
+</section>
+
+<section>
+  <h2>Puls fühlen</h2>
+  <pre><code class="bash">
+  $ curl -XGET 'lolcathost:9200/_cluster/health?pretty=true'
+  </code></pre>
+  <pre class="fragment roll-in"><code class="javascript">
+  {
+    "cluster_name" : "prism_europe",
+    "status" : "green",
+    "timed_out" : false,
+    "number_of_nodes" : 242,
+    "number_of_data_nerds" : 242
+    "active_primary_shards" : 50,
+    "active_shards" : 100,
+    "people_actually_reading_this_slide": 1,
+    "relocating_shards" : 0,
+    "initializing_shards" : 0
+  }
+  </code></pre>
+  <aside class="notes">
+  * Wir sprechen HTTP - also warum nicht auch für das Monitoring?
+  </aside>
+</section>
+
+<section>
+  <h3>Atem checken</h3>
+  <pre><code class="javascript">
+var casper = require('casper').create();
+var baseurl = casper.cli.get("baseurl") || 'http://bascht.com';
+
+casper.start(baseurl, function() {
+  this.capture('shots/homepage.png');
+  this.test.assertTitle('bascht.com');
+  this.test.assertExists('input[action$="/search"]', 'Yay!');
+  this.clickLabel('Blog', 'a');
+});
+  </code></pre>
+  <aside class="notes">
+  * Vorteil: Direktes Feedback - Sofort Grün oder Rot
+  * Und der ganze Stack ist schon warm
+  * Deployment ist ein *Ereignis* in euren Metriken:
+    Selbst die Conversion sollte davon wissen!
+  </aside>
+</section>
+
+<section>
+  <blockquote>Treat staging failures like as if they were production failures.</blockquote>
+  <p style="font-size:0.5em; margin-top: 1em;">— Timothy Fitz (IMVU)</p>
+</section>
+
+<section>
+  <blockquote>Das Frühstücks-Deployment ist die wertvollste Mahlzeit des Tages</blockquote>
+  <p style="font-size:0.5em; margin-top: 1em;">— Bascht (RedFrog Con 2013)</p>
+</section> 
+
+<section>
+  <h3>Kleiner Lackmustest</h3>
+<pre><code class="bash">
+  # ~/.bash_login
+
+  rm ~/.bash_history && sync;
+
+  echo "They never fail who die, In a great cause! Lord Byron";
+  echo "Welcome to $(hostname).";
+
+</code></pre>
+
+</section>
+
+<section>
+<p>
+    <span><strong>Sebastian Schulze</strong></span>
+    <span class="fragment">(@bascht)</span>
+    <span class="fragment">, 29.years </span>
+    <span class="fragment">Software- & Infrastrukture-Developer</span>
+    <span class="fragment">Vogtland<span class="fragment">, Leipzig</span><span class="fragment">, Köln</span><span class="fragment">, Berlin</span></span>
+</p>
+  <hr class="fragment"/>
+  <img class="fragment" style="background-color: white; padding: 0.3em; height: 90px;" src="./images/ruby.png" alt="Ruby" />
+  <img class="fragment fade-in" style="background-color: white; padding: 0.3em; height: 90px;" src="./images/puppetlabs.png" alt="Puppetlabs" />
+  <img class="fragment fade-in" style="background-color: white; padding: 0.3em; height: 90px;" src="./images/jenkins.png" alt="Jenkins" />
+  <img class="fragment fade-in" style="background-color: white; padding: 0.3em; height: 90px;" src="./images/tux.png" alt="Tux" />
+  <img class="fragment fade-in" style="background-color: white; padding: 0.3em; height: 90px; width: 90px;" src="./images/vim.png" alt="Vim" />
+  <br>
+  <hr class="fragment"/>
+  <h3 class="fragment roll-in">Vielen Dank!</h3>
+  <h5 class="fragment roll-in">Twitter / Github / ADN: <strong>@bascht</strong></h5>
+</section>
+
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        parallaxBackgroundSize: '2100px 1080px',
+
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

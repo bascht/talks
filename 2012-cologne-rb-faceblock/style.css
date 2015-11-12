@@ -1,0 +1,27 @@
+body {
+}
+
+.slide {
+  background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+}
+
+.content {
+  font-family: "Ubuntu Mono", Courier, monospace;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+
+}
+
+.subsection h1,
+.subsection h2 {
+  font-weight: bold;
+  background-color: #750909;
+}
+
+h1, h2 {
+  /* color: rgb(79, 180, 226); */
+}

@@ -1,0 +1,154 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift November 2015
+#+DATE: 2015/11/11
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+WWW: https://bascht.com
+#+GITHUB: http://github.com/bascht
+#+TWITTER: bascht
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/rubyshift-icon.png
+#+HASHTAG: #rubyshift
+
+* My talk at Rubyshift Munich <2015-11-11>                         :noexport:
+  The slides are built with [[http://coldnew.github.io/org-ioslide/][org-isolide]]. (@kuanyui == the best)
+
+All the mentioned links:
+
+- [[http://twin.github.io/introducing-shrine/][Shrine File Uploads]]
+- [[http://www.rubyday.it/][Ruby Day Turino]]
+- [[http://compute.rubinius.com][Rubinius Compute]]
+- [[https://events.ccc.de/congress/2015/wiki/Assembly:Rubytown][Rubytown 2015]]
+- [[https://github.com/c9katayama/aws-lambda-jruby][AWS Lambda with JRuby]]
+- [[http://dev.mensfeld.pl/2015/10/euruko-2015-review-conference-in-a-nutshell][euruko 2015 Recap Blogpost]]
+- [[http://hasbeen.in][hasbeen.in - Your trusted Geek Travel Platform]]
+- [[http://bitboxer.de/2015/11/05/ruby-gt-web/][Bodos Blog Post: Ruby > Web]]
+- [[http://github.com/bascht/unsafe][Rusts unsafe{} in Ruby]]
+
+* Happy Karneval / Fasching!
+  :PROPERTIES:
+  :SLIDE:    segue dark uote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+(To whom it may concern!)
+
+* Sad news up front
+#+ATTR_HTML: :class build
+- Padrino 0.13.0 was released.
+- It's been too long since I looked into Padrino.
+- So, no Padrino Talk that was prepared in a hurry.
+- Promise: I'll make it up for it.
+* Meanwhile: shameless self-plug (first attempt)
+http://hasbeen.in
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/hasbeen.png]]
+#+END_CENTER
+* Ruby Day 2015
+:PROPERTIES:
+:FILL: images/torito.svg
+:TITLE: hide
+:SLIDE: WHITE
+:END:
+** Specs
+   * **Turin**, this very Friday (November 13th).
+   * 3 Track conference (at least one in en_US)
+   * Ticket sale ends **tomorrow**
+   * **52€**
+
+* Rubinius, Inc
+  * (by Brian Shirai)
+** Rubinius Compute
+
+#+ATTR_HTML: :class build fade
+- [[http://compute.rubinius.com][compute.rubinius.com]]
+- /Distributed, resilient, collaborating networks of compute nodes are the future of applications in a connected world./
+- InterPlanetary File System (IPFS)
+- Well.
+
+  [[file:images/kaboom.gif]]
+
+* AWS Lambda JRuby
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/aws-lambda-ruby.png]]
+#+END_CENTER
+
+* Shrine
+http://twin.github.io/introducing-shrine/
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/shrine.png]]
+#+END_CENTER
+
+** Usage (shamelessly stolen from aforementioned blog post)
+   #+BEGIN_SRC ruby
+class ImageUploader < Shrine
+  plugin :sequel
+  plugin :pretty_location
+  plugin :logging, format: :json
+end
+#+END_SRC
+#+BEGIN_SRC ruby
+class User < Sequel::Model
+  include ImageUploader[:avatar] # creates and includes an attachment module
+end
+#+END_SRC
+#+BEGIN_SRC ruby
+
+user = User.create(avatar: File.open("path/to/avatar.jpg"))
+user.avatar.id # "user/532/avatar/f753g598sm3l2.jpg"
+   #+END_SRC
+
+* Rubytown!
+Habemus Wiki Page.
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/rubytown.png]]
+#+END_CENTER
+
+* Shameless self-plug (second attempt)
+#+ATTR_HTML: :class build
+- Unsafe in Rust
+  #+BEGIN_SRC rust
+  unsafe {}
+  #+END_SRC
+- Unsafe in *Ruby*!
+  #+BEGIN_SRC ruby
+  unsafe {}
+  #+END_SRC
+
+- [[https://github.com/bascht/unsafe][github.com/bascht/unsafe]]
+* euruko 2015 Recap
+[[http://dev.mensfeld.pl/2015/10/euruko-2015-review-conference-in-a-nutshell/][dev.mensfeld.pl/2015/10/euruko-2015-review-conference-in-a-nutshell]]
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/euruko.png]]
+#+END_CENTER
+
+* Ruby > Web.
+[[http://bitboxer.de/2015/11/05/ruby-gt-web/][bitboxer.de/2015/11/05/ruby-gt-web]]
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 300px
+[[file:images/bodo.jpg]]
+#+END_CENTER
+
+* Still waiting
+:PROPERTIES:
+:FILL: images/cat.jpg
+:TITLE: hide
+:SLIDE: WHITE
+:END:

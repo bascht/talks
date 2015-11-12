@@ -1,0 +1,75 @@
+% Created 2015-05-13 Wed 12:12
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\author{bascht}
+\date{2015/05/13（日）}
+\title{Gerrit}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 24.4.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+
+\section*{The Problem}
+\label{sec-1}
+\subsection*{People not getting Git}
+\label{sec-1-1}
+\begin{center}
+\includegraphics[width=.9\linewidth]{images/merge-master.png}
+\end{center}
+
+\subsection*{Code Reviews in Pull Requests}
+\label{sec-1-2}
+\begin{center}
+\includegraphics[width=.9\linewidth]{images/confused-ticket.png}
+\end{center}
+
+\section*{A Git Commit}
+\label{sec-2}
+
+\subsection*{Well, easy - isn't it?}
+\label{sec-2-1}
+\begin{verbatim}
+$ git show HEAD
+commit b7c680ad8b58c6a886cd486613105ecaae7328e0
+Author: Bob Ross <bob@bobross.com>
+Date:   Wed May 13 01:13:26 2015 +0200
+
+    We do not make mistakes, we just have happy accidents.
+\end{verbatim}
+
+\subsection*{More than meets the eye}
+\label{sec-2-2}
+\begin{verbatim}
+$ git show <b>--pretty=fuller</b> HEAD
+commit b7c680ad8b58c6a886cd486613105ecaae7328e0
+Author:     Bob Ross <bob@bobross.com>
+AuthorDate: Wed May 13 01:13:26 2015 +0200
+<b>Commit:     Bobs Beard <beard@bobross.com>
+CommitDate: Wed May 13 02:16:22 2015 +0000</b>
+
+    We do not make mistakes, we just have happy accidents.
+\end{verbatim}
+
+
+\section*{Thank You ˊ・ω・ˋ}
+\label{sec-3}
+% Emacs 24.4.1 (Org mode 8.2.10)
+\end{document}

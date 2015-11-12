@@ -1,0 +1,155 @@
+#+TITLE: Gerrit
+#+SUBTITLE: A quick introduction
+#+DATE: 2015/05/13（日）
+#+AUTHOR: bascht
+#+EMAIL: github.com@bascht.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+WWW: https://bascht.com
+#+GITHUB: http://github.com/bascht
+#+TWITTER: bascht
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/gerrit_icon.svg
+#+HASHTAG: #rubyshift
+
+* Git Flow
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+** Git Flow
+:PROPERTIES:
+:FILL: images/git-flow.png
+:TITLE: HIDE
+:SLIDE: WHITE
+:END:
+
+
+* The Problem
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+** We are holding it wrong
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 100%
+[[file:images/merge-master.png]]
+#+END_CENTER
+
+** Code Reviews in Pull Requests
+:PROPERTIES:
+:SLIDE: segue dark quote
+:ASIDE: right bottom
+:ARTICLE: flexbox vleft auto-fadein
+:END:
+
+*** Sure. Where do I start?
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 100%
+[[file:images/feature-branch.png]]
+#+END_CENTER
+
+** Git rebase to the rescue
+#+BEGIN_SRC bummer
+ ! [rejected]        feature/myfeature -> feature/myfeature
+#+END_SRC
+#+BEGIN_SRC squash
+ 1 file changed, 5 insertions(+)
+Successfully rebased and updated refs/heads/feature/myfeature.
+#+END_SRC
+#+BEGIN_SRC force push
+ + 3c3ee2b...2f34b62 feature/myfeature -> feature/myfeature (forced update)
+#+END_SRC
+
+*** Yeah. That worked.
+:PROPERTIES:
+:SLIDE: segue quote
+:ASIDE: right bottom
+:ARTICLE: flexbox auto-fadein
+:END:
+
+#+ATTR_HTML: :width 100%
+[[file:images/confused-ticket.png]]
+
+
+* A Git Commit
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+
+* Well, easy - isn't it?
+#+BEGIN_SRC git
+$ git show HEAD
+commit b7c680ad8b58c6a886cd486613105ecaae7328e0
+Author: Bob Ross <bob@bobross.com>
+Date:   Wed May 13 01:13:26 2015 +0200
+
+    We do not make mistakes, we just have happy accidents.
+
+#+END_SRC
+
+
+* Guess who.
+#+BEGIN_QUOTE
+» and yes, I'm somewhat biased: in my opinion, having a
+million monkeys throwing crap at the walls and encoding the information in
+the patterns on monkey shit is a better format than CVS«
+#+END_QUOTE
+
+
+* Yep. This Guy.
+:PROPERTIES:
+:FILL: images/torvalds.jpg
+:TITLE: white
+:SLIDE: WHITE
+:END:
+
+
+* Working with indexes and Patches
+
+#+BEGIN_QUOTE
+In other words, I was already working on the git "index" file. And I was
+planning to just have a patch-based system behind it, with a hashed
+history. Kind of "quilt with history and an index to speed things up".
+#+END_QUOTE
+
+
+* More than meets the eye
+#+BEGIN_SRC git
+$ git show <b>--pretty=email</b> HEAD
+From c4b10b88ab3cf3482df5bc789e8ee1afb69b7591 Mon Sep 17 00:00:00 2001
+From: Bob Ross <bob@bobross.com>
+Date: Wed, 13 May 2015 01:11:13 +0200
+<b>Subject: [PATCH] We do not make mistakes, we just have happy accidents.</b>
+
+#+END_SRC
+
+
+* Wait. What?
+#+BEGIN_SRC git
+$ git show <b>--pretty=fuller</b> HEAD
+commit b7c680ad8b58c6a886cd486613105ecaae7328e0
+Author:     Bob Ross <bob@bobross.com>
+AuthorDate: Wed May 13 01:13:26 2015 +0200
+<b>Commit:     Bobs Beard <beard@bobross.com>
+CommitDate: Wed May 13 02:16:22 2015 +0000</b>
+
+    We do not make mistakes, we just have happy accidents.
+#+END_SRC

@@ -1,0 +1,164 @@
+#+TITLE: Commercial Break
+#+SUBTITLE: Rubyshift October 2015
+#+DATE: 2015/10/14
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+WWW: https://bascht.com
+#+GITHUB: http://github.com/bascht
+#+TWITTER: bascht
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/rubyshift-icon.png
+#+HASHTAG: #rubyshift
+* My talk at Rubyshift Munich <2015-10-14>                         :noexport:
+  The slides are built with [[http://coldnew.github.io/org-ioslide/][org-isolide]]. (@kuanyui == the best)
+* Hello!
+  :PROPERTIES:
+  :SLIDE:    segue dark uote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+* Doublehelix
+* Go delete your Netflix account
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/youtube.png]]
+#+END_CENTER
+
+* Rails
+#+BEGIN_SRC ruby
+class String
+  BLANK_RE = /\A[[:space:]]*\z/
+  def blank?
+    BLANK_RE === self
+  end
+end
+#+END_SRC
+
+* fast blank Gem
+#+BEGIN_SRC c
+static VALUE
+rb_str_blank_as(VALUE str)
+{
+  rb_encoding *enc;
+  char *s, *e;
+
+  enc = STR_ENC_GET(str);
+  s = RSTRING_PTR(str);
+  if (!s || RSTRING_LEN(str) == 0) return Qtrue;
+
+  e = RSTRING_END(str);
+  while (s < e) {
+    int n;
+    unsigned int cc = rb_enc_codepoint_len(s, e, &n, enc);
+
+    switch (cc) {
+      case 9:
+      case 0xa:
+      case 0xb:
+      case 0xc:
+      case 0xd:
+      case 0x20:
+      case 0x85:
+      case 0xa0:
+      case 0x1680:
+      case 0x2000:
+      case 0x2001:
+      case 0x2002:
+      case 0x2003:
+      case 0x2004:
+      case 0x2005:
+      case 0x2006:
+      case 0x2007:
+#+END_SRC
+
+* Rust
+#+BEGIN_SRC rust
+extern crate libc;
+mod buf; // a small buffer struct + impl, not shown
+use buf::Buf;
+
+#[no_mangle]
+pub extern "C" fn tr_str_is_blank(b: Buf) -> bool {
+    let s = b.as_slice().unwrap();
+
+    s.chars().all(|c| c.is_whitespace())
+}
+#+END_SRC
+
+* Next: 32C3
+  :PROPERTIES:
+  :SLIDE:    segue dark uote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+* 32C3
+:PROPERTIES:
+:FILL: images/31c3.jpg
+:TITLE: hide
+:SLIDE: WHITE
+:END:
+
+* Rubytown
+:PROPERTIES:
+:FILL: images/rubytown.jpg
+:TITLE: hide
+:SLIDE: WHITE
+:END:
+
+* Finally
+:PROPERTIES:
+:SLIDE:    segue dark uote
+:ASIDE:    right bottom
+:ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+* The motivational part
+:PROPERTIES:
+:TITLE: hide
+:END:
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/motivation.jpg]]
+#+END_CENTER
+
+* Just do it
+ :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+* It's not *that* hard.
+#+ATTR_HTML: :class build
+- It's not about making people look up to you.
+- Quantity literally means nothing.
+- Nobody has your *exact* background.
+- The best stories aren't about Ruby, but about Rubyists.
+- Reach out for feedback & counseling.
+- It's doable. I could, so can you.
+
+* Klaus
+:PROPERTIES:
+:FILL: images/cat.jpg
+:TITLE: hide
+:SLIDE: WHITE
+:END:
+
+* Thanks
+** I'm looking forward to your next talk
+   Attribution:
+   - 31C3 Photo by [[https://www.flickr.com/photos/heipei/][Heipei]].
+   - Rubytown by [[https://twitter.com/railsgirls_bln/status/548602585880735744][Railsgirls]].
+   - Motivational by [[http://theprofoundprogrammer.com/post/51134458396/text-but-im-good-at-computers-photograph-of][Profound Programmer]].

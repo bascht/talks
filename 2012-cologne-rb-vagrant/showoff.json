@@ -1,0 +1,7 @@
+{ 
+  "name": "Kochen mit Vagrant und Puppet", 
+  "sections": [ 
+    {"section" : "vagrant"},
+    {"section" : "puppet"}
+  ]
+}
