@@ -1,3 +1,5 @@
+#+HTML_HEAD: <style type="text/css">body { font-family: Fira Sans, Helvetica, Arial, sans-serif; }</style>
+
 * My Talks
 
 This is a (non-comprehensive) list of talks I gave at various user
