@@ -1,0 +1,16 @@
+* My Talks
+
+This is a (non-comprehensive) list of talks I gave at various user
+groups & conferences. If you have any questions, feel free to reach
+out for me via a GitHub issue in this repo.
+
+** Found license issues & copyright violations?
+I tried my best to keep the original licenses and give credit to
+original authors. If you find photos / images / text content in this
+repository that violates intellectual property, please notify me at
+~github dot com at bascht dot com~ and I will take it down.
+
+** License
+Unless noted otherwise, all content in this repository is free for you
+to use under the terms of the [[http://creativecommons.org/licenses/by-sa/4.0/][Attribution-ShareAlike 4.0 International
+(CC BY-SA 4.0)]] license.
