@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<!-- 2016-01-13 Wed 16:42 -->
+<meta  charset="utf-8" />
+<meta  htto-equiv="X-UA-Compatible" content="chrome=1" />
+<meta  name="generator" content="Org-mode with org-ioslide" />
+<meta  name="author" content="@bascht" />
+
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--This one seems to work all the time, but really small on ipad-->
+<!--<meta name="viewport" content="initial-scale=0.4">-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" media="all" href="theme/css/default.css" />
+<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css" />
+<link rel="stylesheet" media="all" href="theme/css/small-icon.css" />
+<base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+<script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+
+   <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+</head>
+<body style="opacity: 0">
+<slides class="layout-widescreen">
+<slide class="title-slide segue nobackground">
+       <aside class="gdbar"><img src="images/rubyshift-icon.png"></aside>
+       <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+       <hgroup class="auto-fadein">
+         <h1 data-config-title><!-- populated from slide_config.json --></h1>
+         <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+         <p data-config-presenter><!-- populated from slide_config.json --></p>
+       </hgroup>
+    </slide>
+  <slide id="sec-" class=" segue dark uote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/rubyshift-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Hello!</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Doublehelix</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Go delete your Netflix account</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/youtube.png" alt="youtube.png" width="600px" />
+</p>
+</div>
+</article>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Rails</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="ruby">
+class String
+  BLANK_RE = /\A[[:space:]]*\z/
+  def blank?
+    BLANK_RE === self
+  end
+end
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">fast blank Gem</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="c">
+static VALUE
+rb_str_blank_as(VALUE str)
+{
+  rb_encoding *enc;
+  char *s, *e;
+
+  enc = STR_ENC_GET(str);
+  s = RSTRING_PTR(str);
+  if (!s || RSTRING_LEN(str) == 0) return Qtrue;
+
+  e = RSTRING_END(str);
+  while (s &lt; e) {
+    int n;
+    unsigned int cc = rb_enc_codepoint_len(s, e, &amp;n, enc);
+
+    switch (cc) {
+      case 9:
+      case 0xa:
+      case 0xb:
+      case 0xc:
+      case 0xd:
+      case 0x20:
+      case 0x85:
+      case 0xa0:
+      case 0x1680:
+      case 0x2000:
+      case 0x2001:
+      case 0x2002:
+      case 0x2003:
+      case 0x2004:
+      case 0x2005:
+      case 0x2006:
+      case 0x2007:
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6">Rust</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="rust">
+extern crate libc;
+mod buf; // a small buffer struct + impl, not shown
+use buf::Buf;
+
+#[no_mangle]
+pub extern "C" fn tr_str_is_blank(b: Buf) -&gt; bool {
+    let s = b.as_slice().unwrap();
+
+    s.chars().all(|c| c.is_whitespace())
+}
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-" class=" segue dark uote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/rubyshift-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">Next: 32C3</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-" class="fill WHITE nobackground" style="background-image: url(images/31c3.jpg)">
+<article class="" id="text-">
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-" class="fill WHITE nobackground" style="background-image: url(images/rubytown.jpg)">
+<article class="" id="text-">
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-" class=" segue dark uote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/rubyshift-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline10" class="outline-2">
+<h2 id="orgheadline10">Finally</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-"  >
+<article class="" id="text-">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/motivation.jpg" alt="motivation.jpg" width="800px" />
+</p>
+</div>
+</article>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/rubyshift-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline12" class="outline-2">
+<h2 id="orgheadline12">Just do it</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline13" class="outline-2">
+<h2 id="orgheadline13">It's not <b>that</b> hard.</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build">
+<li>It's not about making people look up to you.</li>
+<li>Quantity literally means nothing.</li>
+<li>Nobody has your <b>exact</b> background.</li>
+<li>The best stories aren't about Ruby, but about Rubyists.</li>
+<li>Reach out for feedback &amp; counseling.</li>
+<li>It's doable. I could, so can you.</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-" class="fill WHITE nobackground" style="background-image: url(images/cat.jpg)">
+<article class="" id="text-">
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline16" class="outline-2">
+<h2 id="orgheadline16">Thanks</h2>
+<div class="outline-text-2" id="text-orgheadline16">
+</div></div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<div class="outline-text-2" id="text-orgheadline16">
+</div>
+</slide>
+<slide class="backdrop"></slide>
+</slides>
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+
+</html>
