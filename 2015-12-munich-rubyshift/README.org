@@ -1,0 +1,166 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift December 2015
+#+DATE: 2015/12/09
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+WWW: https://bascht.com
+#+GITHUB: http://github.com/bascht
+#+TWITTER: bascht
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/rubyshift-icon.png
+#+HASHTAG: #rubyshift
+
+* My talk at Rubyshift Munich <2015-12-9>                          :noexport:
+  The slides are built with [[http://coldnew.github.io/org-ioslide/][org-isolide]]. (@kuanyui == the best)
+
+All the mentioned links:
+
+- [[http://24pullrequests.com][24pullrequests.com]]
+- [[http://rom-rb.org/blog/2015/11/24/first-beta-of-rom-1-0-0-has-been-released/][ROM 1.0]]
+- [[http://elcuervo.github.io/minuteman/][Minuteman 2.0]]
+- [[http://nithinbekal.com/posts/ruby-2-3-features/][Ruby 2.3]]
+- [[http://adventofcode.com][adventofcode.com]]
+
+* Advent of Code
+http://adventofcode.com
+
+** Serious Math Flashback Warning
+  :PROPERTIES:
+  :ARTICLE:  smaller
+  :END:
+
+A present with dimensions =2x3x4= requires =2*6 + 2*12 + 2*8 = 52= square
+feet of wrapping paper plus 6 square feet of slack, for a total of
+58 square feet.
+
+A present with dimensions =1x1x10= requires =2*1 + 2*10 + 2*10 = 42=
+square feet of wrapping paper plus 1 square foot of slack, for a
+total of 43 square feet.
+
+*All numbers in the elves' list are in feet. How many total square
+feet of wrapping paper should they order?*
+
+* 24 Pull Requests
+
+[[http://24pullrequests.com/languages/ruby][24pullrequests.com/languages/ruby]]
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/24pullrequests.png]]
+#+END_CENTER
+
+* Upgrade your Passenger now
+
+If your're reading this *today*, you're late. :D
+https://blog.phusion.nl/2015/12/07/cve-2015-7519/
+
+#+ATTR_HTML: :class build
++ =X_User: Bob, X-Auth-Token: ValidMallory=
++ =HTTP_X_USER: Bob, HTTP_X_USER: Mallory=
+
+* ROM 1.0
+http://rom-rb.org/blog/2015/11/24/first-beta-of-rom-1-0-0-has-been-released/
+
+1.0.0beta2
+
+** Command API
+
+#+BEGIN_SRC ruby
+create_command = rom.command.create(user: :users) do |user|
+  user.create(:books)
+end
+
+create_command.call(
+  user: {
+    name: "Jane",
+    books: [{ title: "Book 1" }, { title: "Book 2" }]
+  }
+)
+
+result.success?
+result.failure?
+#+END_SRC
+
+** Relation API: views
+
+#+BEGIN_SRC ruby
+class Users < ROM::Relation[:sql]
+  view(:listing, [:id, :name, :email]) do |*order_args|
+    select(:id, :name, :email).order(*order_args)
+  end
+end
+
+rom.relation(:users).listing(:name, :id)
+#+END_SRC
+
+** Mappers
+
+#+BEGIN_SRC ruby
+class MyMapper < ROM::Mapper
+  attribute :address, from: [:city, :street, :zipcode] do |city, street, zipcode|
+    "#{zipcode}, #{city}, #{street}"
+  end
+end
+#+END_SRC
+
+** Hire Piotr!
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/piotr.png]]
+#+END_CENTER
+
+([[http://www.solnic.eu/about.html][solnic.eu]])
+
+* Minuteman 2.0
+
+#+BEGIN_SRC ruby
+class SomethingController < ApplicationController
+  def create
+    track("something:create", current_user.id) if current_user
+  end
+  def index
+    @current_events = events
+  end
+  def show
+    @group = analytics.month("something:create") - analytics.month("free:users")
+  end
+end
+#+END_SRC
+
+http://elcuervo.github.io/minuteman/
+* Ruby 2.3
+Christmas Ruby!
+http://nithinbekal.com/posts/ruby-2-3-features/
+** New Operator &.
+
+#+BEGIN_SRC ruby
+puts "well" if user && user.exists?
+puts "this is nice" if user&.exists?
+#+END_SRC
+** Frozen Strings!
+
+#+BEGIN_SRC ruby
+cone = 'chocolate'.freeze
+cone << 'icecream!' # can't modify frozen String (RuntimeError)
+#+END_SRC
+
+Transition via =frozen_string_literal: true=
+
+** Fetch values from Enumerable
+
+#+BEGIN_SRC ruby
+h = { foo: 1, bar: 2, baz: 3}
+h.values_at(:foo, :boom)    #=> [1, nil]
+h.fetch_values(:foo, :boom) #=> raise KeyError
+#+END_SRC
