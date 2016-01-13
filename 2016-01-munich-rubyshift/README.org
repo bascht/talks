@@ -90,8 +90,16 @@ https://rubyissues.ongoodbits.com
 
 #+BEGIN_CENTER
 #+ATTR_HTML: :width 600px
+[[file:images/confreaks.png]]
+#+ATTR_HTML: :style border: 2px
+#+END_CENTER
+
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
 [[file:images/ruby-issues.png]]
 #+END_CENTER
+
+[[https://www.youtube.com/watch?v=S2FUSr3WlPk&feature=youtu.be][How to Crash an Airplane by Nickolas Means]]
 
 * Save money!
 Sounds good?
