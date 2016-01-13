@@ -39,6 +39,7 @@ task :index do
   File.open('README.org', 'w') {|f| f.write(index) }
   @logger.info("Rebuilt ORG index.")
   dontbotherme("emacs --batch -l ~//.emacs.d/init.el --visit=README.org --funcall org-html-export-to-html")
+  FileUtils.move("README.html", "index.html")
   @logger.info("Rebuilt HTML index. I'm done.")
 end
 
