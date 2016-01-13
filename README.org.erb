@@ -2,20 +2,8 @@
 
 * My Talks
 
-
-- [[file:2016-01-munich-rubyshift/][2016-01-munich-rubyshift/]]
-- [[file:2015-12-munich-rubyshift/][2015-12-munich-rubyshift/]]
-- [[file:2015-11-munich-rubyshift/][2015-11-munich-rubyshift/]]
-- [[file:2015-10-munich-rubyshift/][2015-10-munich-rubyshift/]]
-- [[file:2015-05-munich-rubyshift/][2015-05-munich-rubyshift/]]
-- [[file:2015-03-munich-rubyshift/][2015-03-munich-rubyshift/]]
-- [[file:2014-leipzig-js/][2014-leipzig-js/]]
-- [[file:2014-cologne-js/][2014-cologne-js/]]
-- [[file:2012-lightning-io/][2012-lightning-io/]]
-- [[file:2012-cologne.rb/][2012-cologne.rb/]]
-- [[file:2012-cologne-rb-vagrant/][2012-cologne-rb-vagrant/]]
-- [[file:2012-cologne-rb-faceblock/][2012-cologne-rb-faceblock/]]
-- [[file:2011-pyconde/][2011-pyconde/]]
+<% talks.each do |talk| %>
+- [[file:<%= talk %>][<%= talk %>]]<% end %>
 
 This is a (non-comprehensive) list of talks I gave at various user
 groups & conferences. If you have any questions, feel free to reach
@@ -36,4 +24,4 @@ Unless noted otherwise, all content in this repository is free for you
 to use under the terms of the [[http://creativecommons.org/licenses/by-sa/4.0/][Attribution-ShareAlike 4.0 International
 (CC BY-SA 4.0)]] license.
 
-Generated: 2016-01-13 17:25:51 +0100
+Generated: <%= Time.new %>
