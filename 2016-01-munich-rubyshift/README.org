@@ -1,0 +1,124 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift January 2016
+#+DATE: 2016/01/13
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+WWW: https://bascht.com
+#+GITHUB: http://github.com/bascht
+#+TWITTER: bascht
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/rubyshift-icon.png
+#+HASHTAG: #rubyshift
+
+* My talk at Rubyshift Munich <2016-01-13>                         :noexport:
+  The slides are built with [[http://coldnew.github.io/org-ioslide/][org-isolide]]. (@kuanyui == the best)
+
+All the mentioned links:
+- [[http://lotusrb.org/blog/2016/01/12/announcing-lotus-060.html][Lotus 0.6.0]]
+- [[https://github.com/michaeldv/awesome_print][awesome_print]]
+- [[http://rorbservations.com/post/136816741674/rubys-unless-x-is-processed-differently][Unless X is processed differently]]
+- [[https://rubyissues.ongoodbits.com][Ruby Issues]]
+
+* Welcome to 2016!
+  :PROPERTIES:
+  :ARTICLE:  flexbox vleft auto-fadein
+  :TITLE:    white
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :END:
+
+* Rubytown at 32C3
+  :PROPERTIES:
+  :FILL:     images/cch.jpg
+  :TITLE:    white
+  :SLIDE:    white
+  :END:
+
+** 't was good!
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/rubytown.gif]]
+#+ATTR_HTML: :style border: 2px
+#+END_CENTER
+
+* Lotus 0.6.0
+
+#+ATTR_HTML: :class build
+- Heroku Support
+- Destroy Command
+- Asset Management
+- Ruby 2.0 and 2.1 are now deprecated 😲
+
+* AwesomePrint
+
+#+BEGIN_SRC ruby
+require "awesome_print"
+AwesomePrint.pry!
+#+END_SRC
+
+* Hands on Ruby: unless x
+http://rorbservations.com/post/136816741674/rubys-unless-x-is-processed-differently
+
+#+BEGIN_SRC ruby
+cmd = "if true; 'iztroo' else; 'izfalz'; end"
+RubyVM::InstructionSequence.compile(cmd).disassemble
+#+END_SRC
+#+BEGIN_SRC asm
+== disasm: <RubyVM::InstructionSequence:<compiled>@<compiled>>==========
+0000 trace            1                                               (   1)
+0002 putstring        "iztroo"
+0004 leave
+0005 pop
+0006 putstring        "izfalz"
+0008 leave
+#+END_SRC
+
+* Moar Ruby News!
+https://rubyissues.ongoodbits.com
+
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/ruby-issues.png]]
+#+END_CENTER
+
+* Save money!
+Sounds good?
+** You know what's cheaper than a head hunter?
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 300px
+[[file:images/headhunters.jpg]]
+#+END_CENTER
+
+* Hosting next months Rubyshift
+   :PROPERTIES:
+   :SLIDE:    segue dark quote
+   :ASIDE:    right bottom
+   :ARTICLE:  flexbox vleft auto-fadein
+   :END:
+
+* I did science
+
+#+ATTR_HTML: :class build
+- Pizza is way cheaper than Hays
+- You get to introduce your company & your technology stack
+- It's not gonna take all month to run a month
+- You don't have to commute.
+
+* Rubykaraoke
+  :PROPERTIES:
+  :FILL:     images/karaoke.jpg
+  :TITLE:    white
+  :SLIDE:    white
+  :END:
