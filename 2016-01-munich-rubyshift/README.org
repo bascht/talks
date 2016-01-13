@@ -30,6 +30,8 @@ All the mentioned links:
 - [[https://github.com/michaeldv/awesome_print][awesome_print]]
 - [[http://rorbservations.com/post/136816741674/rubys-unless-x-is-processed-differently][Unless X is processed differently]]
 - [[https://rubyissues.ongoodbits.com][Ruby Issues]]
+- [[https://www.youtube.com/watch?v=S2FUSr3WlPk&feature=youtu.be][How to Crash an Airplane by Nickolas Means]]
+- [[http://euruko2016.org/][Euruko 2016 Newsletter]]
 
 * Welcome to 2016!
   :PROPERTIES:
@@ -85,15 +87,22 @@ RubyVM::InstructionSequence.compile(cmd).disassemble
 0008 leave
 #+END_SRC
 
-* Moar Ruby News!
-https://rubyissues.ongoodbits.com
-
+* Confreaks Talk
 #+BEGIN_CENTER
 #+ATTR_HTML: :width 600px
 [[file:images/confreaks.png]]
 #+ATTR_HTML: :style border: 2px
 #+END_CENTER
 
+* Euruko 2016 Newsletter
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/euruko.png]]
+#+ATTR_HTML: :style border: 2px
+#+END_CENTER
+
+* Moar Ruby News!
+https://rubyissues.ongoodbits.com
 #+BEGIN_CENTER
 #+ATTR_HTML: :width 600px
 [[file:images/ruby-issues.png]]
