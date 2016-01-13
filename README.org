@@ -2,7 +2,6 @@
 
 * My Talks
 
-
 - [[file:2016-01-munich-rubyshift/][2016-01-munich-rubyshift/]]
 - [[file:2015-12-munich-rubyshift/][2015-12-munich-rubyshift/]]
 - [[file:2015-11-munich-rubyshift/][2015-11-munich-rubyshift/]]
@@ -36,4 +35,4 @@ Unless noted otherwise, all content in this repository is free for you
 to use under the terms of the [[http://creativecommons.org/licenses/by-sa/4.0/][Attribution-ShareAlike 4.0 International
 (CC BY-SA 4.0)]] license.
 
-Generated: 2016-01-13 17:25:51 +0100
+Generated: 2016-01-13 18:09:32 +0100
