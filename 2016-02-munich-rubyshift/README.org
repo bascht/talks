@@ -1,5 +1,5 @@
 #+TITLE: News Bulletin
-#+SUBTITLE: Rubyshift January 2016
+#+SUBTITLE: Rubyshift February 2016
 #+DATE: 2016/02/10
 #+AUTHOR: @bascht
 #+EMAIL: github.com@bascht.com
@@ -39,6 +39,7 @@ All the mentioned links:
 [[file:images/railsgirls.jpg]]
 #+ATTR_HTML: :style border: 2px
 #+END_CENTER
+(c) Photo [[http://twitter.com/@SophieDommage][@SophieDommage]].
 * Bath Ruby 2016
 #+BEGIN_CENTER
 #+ATTR_HTML: :width 600px
