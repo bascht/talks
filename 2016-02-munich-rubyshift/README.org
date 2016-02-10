@@ -1,0 +1,92 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift January 2016
+#+DATE: 2016/02/10
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+WWW: https://bascht.com
+#+GITHUB: http://github.com/bascht
+#+TWITTER: bascht
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/rubyshift-icon.png
+#+HASHTAG: #rubyshift
+
+
+* My talk at Rubyshift Munich <2016-01-13>                         :noexport:
+  The slides are built with [[http://coldnew.github.io/org-ioslide/][org-isolide]]. (@kuanyui == the best)
+
+All the mentioned links:
+
+- [[http://railsgirls.com/munich2016][Railsgirls Munich]]
+- [[http://www.vienna-rb.at/blog/2016/02/03/picks/][Vienna.rb]]
+- [[munich.onruby.de][Munich on Ruby]]
+- [[http://2016.bathruby.uk/schedule/index.html][Bath Ruby]]
+
+* Railsgirls Munich 2016
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/railsgirls.jpg]]
+#+ATTR_HTML: :style border: 2px
+#+END_CENTER
+* Bath Ruby 2016
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/bath-ruby.png]]
+#+ATTR_HTML: :style border: 2px
+#+END_CENTER
+
+- March 11th 2016
+- £99
+
+* Ruby Burgers
+  :PROPERTIES:
+  :ARTICLE:  flexbox vleft auto-fadein
+  :TITLE:    white
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :END:
+
+
+* (Okay. Well. Ruby-Miso. )
+  :PROPERTIES:
+  :ARTICLE:  flexbox
+  :TITLE:    white
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :END:
+
+
+* Munich. On Ruby!
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/onruby.png]]
+#+ATTR_HTML: :style border: 2px
+#+END_CENTER
+
+
+* Vienna.rb <3
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 600px
+[[file:images/viennarb.png]]
+#+ATTR_HTML: :style border: 2px
+#+END_CENTER
+
+
+* Stickers!
+  :PROPERTIES:
+  :ARTICLE:  flexbox
+  :TITLE:    white
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :END:
