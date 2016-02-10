@@ -34,8 +34,11 @@ All the mentioned links:
 - [[http://2016.bathruby.uk/schedule/index.html][Bath Ruby]]
 
 * Railsgirls Munich 2016
+:PROPERTIES:
+:ARTICLE:  smaller
+:END:
 #+BEGIN_CENTER
-#+ATTR_HTML: :width 600px
+#+ATTR_HTML: :width 500px
 [[file:images/railsgirls.jpg]]
 #+ATTR_HTML: :style border: 2px
 #+END_CENTER
