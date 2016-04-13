@@ -1,0 +1,116 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift April 2016
+#+DATE: 2016/04/13
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+WWW: https://bascht.com
+#+GITHUB: http://github.com/bascht
+#+TWITTER: bascht
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/rubyshift-icon.png
+#+HASHTAG: #rubyshift
+
+
+* My talk at Rubyshift Munich <2016-04-13>                         :noexport:
+  The slides are built with [[http://coldnew.github.io/org-ioslide/][org-isolide]]. (@kuanyui == the best)
+
+All the mentioned links:
+
+- [[http://railsgirlsberlin.de/][Rails Girls Berlin]]
+- [[http://ruby.libhunt.com][Awesome Ruby]]
+- [[https://github.com/JuanitoFatas/what-do-you-call-this-in-ruby][What do you call this in Ruby?]]
+- [[https://www.ruby-toolbox.com/][Ruby Toolbox]]
+- [[http://rubyberlin.org/][Ruby Berlin e.V.]]
+
+* Awesome Ruby
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 700px
+[[file:images/awesome-ruby.png]]
+#+END_CENTER
+
+* What do you call this in Ruby?
+  :PROPERTIES:
+  :ARTICLE:  small
+  :END:
+  #+ATTR_HTML: :class build
+[[https://github.com/JuanitoFatas/what-do-you-call-this-in-ruby][github.com/JuanitoFatas/what-do-you-call-this-in-ruby]]
+
+** Easy. No?
+   #+ATTR_HTML: :class build
+  |-------+------------------|
+  | ?     | ☺                |
+  |-------+------------------|
+  | ~=>~  | hashrocket       |
+  |-------+------------------|
+  | ~<=>~ | spaceship        |
+  |-------+------------------|
+  | ~‖=~  | top hat operator |
+  |-------+------------------|
+  | ~...~ | here be dragons  |
+  |-------+------------------|
+  | ~<%=~ | angry squid      |
+  |-------+------------------|
+  | ~=~~  | bacon cannon     |
+  |-------+------------------|
+
+* Happy 4th Birthday, RailsGirls Berlin!
+:PROPERTIES:
+:ARTICLE:  smaller
+:END:
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 700px
+[[file:images/railsgirls.png]]
+#+END_CENTER
+
+* The Verein
+  :PROPERTIES:
+  :ARTICLE:  flexbox vleft auto-fadein
+  :TITLE:    white
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :END:
+
+** Ruby Berlin e.V. that is
+- A warm, fuzzy feeling (if you're a Rubyist)
+- Tax Deductions (if you're a Capitalist)
+
+[[http://rubyberlin.org][rubyberlin.org]]
+
+* Looking for a Ruby-Job?
+  :PROPERTIES:
+  :ARTICLE:  flexbox vleft auto-fadein
+  :TITLE:    black
+  :SLIDE:    segue dark
+  :ASIDE:    right bottom
+  :END:
+
+* Conference-News
+#+ATTR_HTML: :class build
+- Nordic Ruby
+  - Pretty awesome
+  - Pretty darn expensive
+  - 17–19 June, 2016
+- euruko
+  - Pretty awesome
+  - (Probably) pretty affordable
+  - Even better with a CfP
+
+* Ruby 🍔 in May?
+  :PROPERTIES:
+  :ARTICLE:  flexbox vleft auto-fadein
+  :TITLE:    white
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :END:
