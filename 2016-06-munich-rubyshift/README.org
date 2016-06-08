@@ -1,0 +1,83 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift June 2016
+#+DATE: 2016/06/08
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+WWW: https://bascht.com
+#+GITHUB: http://github.com/bascht
+#+TWITTER: bascht
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/rubyshift-icon.png
+#+HASHTAG: #rubyshift
+
+
+* My talk at Rubyshift Munich <2016-06-08>                         :noexport:
+  The slides are built with [[http://coldnew.github.io/org-ioslide/][org-isolide]]. (@kuanyui == the best)
+
+All the mentioned links:
+- [[https://rorganize.it/][RoRganize.it]]
+- [[https://www.froscon.de/en/cfp/][FrOSCon 2016]]
+- [[https://jhawthorn.github.io/curl-to-ruby/][Curl to Ruby]]
+- [[http://idiosyncratic-ruby.com/][Idiosyncratic Ruby]]
+
+
+* RoRganize.it
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/rorganize.png]]
+#+END_CENTER
+
+
+
+
+
+
+
+
+* FrOSCon 2016
+- August 20th + 21st.
+- Think: Tiny (not in a bad way) Fosdem.
+- CfP for science track still open
+
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/froscon.png]]
+#+END_CENTER
+
+
+* curl to ruby
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/curl-to-ruby.png]]
+#+END_CENTER
+
+* Idiosyncratic Ruby by Jan Lelis
+http://idiosyncratic-ruby.com/
+
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/idiosyncratic-ruby.png]]
+#+END_CENTER
+
+
+
+* Thank you.
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+http://talks.bascht.com
