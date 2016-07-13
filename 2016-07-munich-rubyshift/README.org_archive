@@ -1,0 +1,19 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/bascht/Documents/Projects/Talks/2016-07-munich-rubyshift/README.org
+
+
+* Trumpify
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2016-07-13 Wed 17:33
+  :ARCHIVE_FILE: ~/Documents/Projects/Talks/2016-07-munich-rubyshift/README.org
+  :ARCHIVE_CATEGORY: README
+  :END:
+#+ATTR_HTML: :class build fade
+- =gem trumpify=
+- Make Ruby great again.
+
+
+  #+BEGIN_SR
+  #+END_SR

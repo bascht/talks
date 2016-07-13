@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<!-- 2016-07-13 Wed 17:56 -->
+<meta  charset="utf-8" />
+<meta  htto-equiv="X-UA-Compatible" content="chrome=1" />
+<meta  name="generator" content="Org-mode with org-ioslide" />
+<meta  name="author" content="@bascht" />
+
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--This one seems to work all the time, but really small on ipad-->
+<!--<meta name="viewport" content="initial-scale=0.4">-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" media="all" href="theme/css/default.css" />
+<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css" />
+<link rel="stylesheet" media="all" href="theme/css/small-icon.css" />
+<base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+<script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+
+   <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+</head>
+<body style="opacity: 0">
+<slides class="layout-widescreen">
+<slide class="title-slide segue nobackground">
+       <aside class="gdbar"><img src="images/rubyshift-icon.png"></aside>
+       <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+       <hgroup class="auto-fadein">
+         <h1 data-config-title><!-- populated from slide_config.json --></h1>
+         <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+         <p data-config-presenter><!-- populated from slide_config.json --></p>
+       </hgroup>
+    </slide>
+
+
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">euruko is coming up (72 days to go!)</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+
+</slide>
+
+</slide>
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/rubyshift-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Book your ✈ now.</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">How to spy on a Ruby program</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li>Java has JStack.</li>
+<li><p>
+With a bit of Rust, we can have this:
+</p>
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/sampling.png" alt="sampling.png" width="800px" />
+</p>
+</div>
+</article></li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/rubyshift-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Seriously. Go read Julias blog.</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">Trumpify</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li><code>gem trumpify</code></li>
+<li><p>
+Make Ruby great again.
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="ruby">
+# Bail out if called by someone who doesn't support freedom
+super unless m = method_name.match(/make_(.*)_great_again/)
+send(m.captures[0], *args, &amp;block)
+</pre>
+
+</div></li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6">nio4r</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="ruby">
+clients = []
+3.times do
+  clients &lt;&lt; server.accept
+end
+ready = IO.select(clients)
+</pre>
+
+</div>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="ruby">
+3.times do
+  client = server.accept
+  _monitor = selector.register(client, :r)
+end
+ready = selector.select
+</pre>
+
+</div>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="ruby">
+ready = selector.select(15) # Wait 15 seconds
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">Want more slides?</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+
+</slide>
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline8" class="outline-2">
+<h2 id="orgheadline8">There you go. More slides:</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/salary-negotiations.png" alt="salary-negotiations.png" width="800px" />
+</p>
+</div>
+</article>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=N8u9H6JDAzo&amp;list=PLECEw2eFfW7iiJpXtb_cYeKv5_A6Pd1tl&amp;index=15">YouTube</a></li>
+<li><a href="https://speakerdeck.com/rkh/how-we-replaced-salary-negotiations-with-a-sinatra-app">Speakerdeck</a></li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/rubyshift-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9">Thank you.</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+<p>
+<a href="http://talks.bascht.com">http://talks.bascht.com</a>
+</p>
+
+
+</article>
+
+</slide>
+<slide class="backdrop"></slide>
+</slides>
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+
+</html>
