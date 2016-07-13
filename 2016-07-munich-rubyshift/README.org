@@ -1,0 +1,116 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift July 2016
+#+DATE: 2016/07/13
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+WWW: https://bascht.com
+#+GITHUB: http://github.com/bascht
+#+TWITTER: bascht
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/rubyshift-icon.png
+#+HASHTAG: #rubyshift
+
+
+* My talk at Rubyshift Munich <2016-07-13>                         :noexport:
+  The slides are built with [[http://coldnew.github.io/org-ioslide/][org-isolide]]. (@kuanyui == the best)
+
+All the mentioned links:
+
+- [[http://euruko2016.org/][euruko 2016]]
+- [[http://jvns.ca/blog/2016/06/12/a-weird-system-call-process-vm-readv/][How to spy on a Ruby program]].
+- [[https://github.com/rickr/trumpify][Make Ruby great again]].
+- [[https://tonyarcieri.com/a-gentle-introduction-to-nio4r][A gentle introduction into nio4r]]
+- [[https://speakerdeck.com/rkh/how-we-replaced-salary-negotiations-with-a-sinatra-app][How We Replaced Salary Negotiations with a Sinatra App]]
+
+
+* euruko is coming up (72 days to go!)
+
+* Book your ✈ now.
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+* How to spy on a Ruby program
+#+ATTR_HTML: :class build fade
+ - Java has JStack.
+ - With a bit of Rust, we can have this:
+  #+BEGIN_CENTER
+  #+ATTR_HTML: :width 800px
+  [[file:images/sampling.png]]
+  #+END_CENTER
+
+* Seriously. Go read Julias blog.
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+* Trumpify
+#+ATTR_HTML: :class build fade
+- =gem trumpify=
+- Make Ruby great again.
+
+  #+BEGIN_SRC ruby
+  # Bail out if called by someone who doesn't support freedom
+  super unless m = method_name.match(/make_(.*)_great_again/)
+  send(m.captures[0], *args, &block)
+  #+END_SRC
+
+
+* nio4r
+
+  #+BEGIN_SRC ruby
+clients = []
+3.times do
+  clients << server.accept
+end
+ready = IO.select(clients)
+  #+END_SRC
+
+#+BEGIN_SRC ruby
+3.times do
+  client = server.accept
+  _monitor = selector.register(client, :r)
+end
+ready = selector.select
+#+END_SRC
+#+BEGIN_SRC ruby
+ready = selector.select(15) # Wait 15 seconds
+#+END_SRC
+
+
+* Want more slides?
+
+* There you go. More slides:
+
+  #+BEGIN_CENTER
+  #+ATTR_HTML: :width 800px
+  [[file:images/salary-negotiations.png]]
+  #+END_CENTER
+
+- [[https://www.youtube.com/watch?v=N8u9H6JDAzo&list=PLECEw2eFfW7iiJpXtb_cYeKv5_A6Pd1tl&index=15][YouTube]]
+- [[https://speakerdeck.com/rkh/how-we-replaced-salary-negotiations-with-a-sinatra-app][Speakerdeck]]
+
+* Thank you.
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+http://talks.bascht.com
