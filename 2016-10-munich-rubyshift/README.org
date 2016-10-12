@@ -1,0 +1,53 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift October 2016
+#+DATE: 2016/07/13
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+WWW: https://bascht.com
+#+GITHUB: http://github.com/bascht
+#+TWITTER: bascht
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/rubyshift-icon.png
+#+HASHTAG: #rubyshift
+
+
+* My talk at Rubyshift Munich <2016-10-12>                         :noexport:
+  The slides are built with [[http://coldnew.github.io/org-ioslide/][org-isolide]]. (@kuanyui == the best)
+
+All the mentioned links:
+
+- [[http://www.rubyday.it/][RubyDay Italy]]
+
+* RubyConf Italy
+#+ATTR_HTML: :class build fade
+ - November 25th + 26th, Florence
+ - Ticket sale still open
+  #+BEGIN_CENTER
+  #+ATTR_HTML: :width 800px
+  [[file:images/rubyday.png]]
+  #+END_CENTER
+
+* RailsGirls 2017 in Munich?
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+* Ruby Burgers in November?
+  #+BEGIN_CENTER
+  #+ATTR_HTML: :width 200px
+  [[file:images/rubyburgers.png]]
+  #+END_CENTER
