@@ -1,5 +1,5 @@
 #+TITLE: News Bulletin
-#+SUBTITLE: Rubyshift October 2016
+#+SUBTITLE: Rubyshift November 2016
 #+DATE: 2016/07/13
 #+AUTHOR: @bascht
 #+EMAIL: github.com@bascht.com
@@ -23,31 +23,28 @@
 #+HASHTAG: #rubyshift
 
 
-* My talk at Rubyshift Munich <2016-10-12>                         :noexport:
+* My talk at Rubyshift Munich <2017-03-08>                         :noexport:
   The slides are built with [[http://coldnew.github.io/org-ioslide/][org-isolide]]. (@kuanyui == the best)
 
 All the mentioned links:
 
-- [[http://www.rubyday.it/][RubyDay Italy]]
 
-* RubyConf Italy
-#+ATTR_HTML: :class build fade
- - November 25th + 26th, Florence
- - Ticket sale still open
-  #+BEGIN_CENTER
-  #+ATTR_HTML: :width 800px
-  [[file:images/rubyday.png]]
-  #+END_CENTER
+* Sinatra 2.0.0-rc1 is up
 
-* RailsGirls 2017 in Munich?
-  :PROPERTIES:
-  :SLIDE:    segue dark quote
-  :ASIDE:    right bottom
-  :ARTICLE:  flexbox vleft auto-fadein
-  :END:
+https://github.com/sinatra/sinatra/releases/tag/v2.0.0.rc1
+* Ruby Together report is up
 
-* Ruby Burgers in October?
-  #+BEGIN_CENTER
-  #+ATTR_HTML: :width 200px
-  [[file:images/rubyburgers.png]]
-  #+END_CENTER
+  In the months of January and February combined, we saw $45,031 in
+  total income, and spent a total of $44,893.72.
+
+https://rubytogether.org/news/2017-03-08-january-and-february-2017-monthly-update
+
+* Euruko Website is up
+
+https://www.euruko2017.org/
+
+* Ruby Burgers, hot pot Edition
+
+http://www.seriouseats.com/images/2014/12/20141125-hot-pot-guide-shao-zhong-17.jpg
+
+ =15.03.2017=  (next wednesday!)
