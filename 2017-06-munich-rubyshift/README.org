@@ -1,0 +1,107 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift June 2017
+#+DESCRIPTION:
+#+CREATOR: Emacs 25.2.1 (Org mode 9.0.7)
+#+OPTIONS: toc:t num:t H:2
+#+KEYWORDS:
+#+LANGUAGE: en
+#+DATE: 2017/06/14
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+
+* RubyShift 2017/05 news slot
+
+  #+ATTR_LATEX: :width 5cm
+  [[file:images/rubyshift-icon.png]]
+
+- All the mentioned links and dates will be up on the meetup site.
+- Shout out to [[https://twitter.com/moonbeamlabs][Lucas]].
+
+* Ruby Jobs
+** Xing Events GmbH is hiring
+- Hagen says Hi!
+- [[https://www.xing.com/jobs/muenchen-senior-developer-ruby-on-rails-29834439][xing.com/jobs]]
+
+* Isle of Ruby
+
+  ~<cue sad music>~
+
+* Ruby on Ice
+
+  #+ATTR_LATEX: :width 5cm
+  [[file:images/rubyonice.png]]
+
+  [[https://rubyonice.com/][rubyonice.com]]
+
+* Wanna help organise a Ruby Event?
+
+- We're organising Ruby on Ice in 2018
+- Talk to Henning and me
+
+* Rails Girls 2017
+- *Save the date:* 06. + 07.th of October
+- More free slots than last time
+
+** Meet
+   [[file:railsgirls/meet.jpg]]
+
+** Code
+   [[file:railsgirls/code.jpg]]
+
+** See Talks
+   [[file:railsgirls/talks.jpg]]
+
+** Have more Pizza
+   [[file:railsgirls/pizza.jpg]]
+
+** Still Sponsor Slots open
+ - Your company can help to run Rails Girls 2017
+
+* This useful / small tty toolkit
+** Remember the popen3 syntax?
+
+ #+BEGIN_SRC ruby
+
+ out, err = cmd.run("date")
+ puts "The date is #{out}"
+ # => "The date is Tue 10 May 2016 22:30:15 BST\n"
+
+     #+END_SRC
+
+** Or how to test in bash with [[]]?
+
+   #+BEGIN_SRC ruby
+   if cmd.test '-e /etc/passwd'
+     puts "Sweet..."
+   else
+     puts "Ohh no! Where is it?"
+     exit 1
+   end
+   #+END_SRC
+
+** Give it a try
+
+  https://piotrmurach.github.io/tty/
+
+* Ruby Standard Gems
+
+https://stdgems.org/
+
+* Ruby Toolbox
+
+https://github.com/rubytoolbox/rubytoolbox/issues/1
+
+* Wanna give a talk about these Tools?
+
+Be +my+ our guest.
+
+* Thanks!
+
+- Thanks to Experteer for hosting us!
+- Enjoyed the Pizza!
+
+* …one more thing
+
+  RubyBurgers, anyone?
+
+  =:-)=
