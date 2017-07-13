@@ -1,0 +1,47 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift July 2017
+#+DESCRIPTION:
+#+CREATOR: Emacs 25.2.1 (Org mode 9.0.7)
+#+OPTIONS: toc:t num:t H:2
+#+KEYWORDS:
+#+LANGUAGE: en
+#+DATE: 2017/07/12
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+
+* RubyShift 2017/07 news slot
+
+  #+ATTR_LATEX: :width 5cm
+  [[file:images/rubyshift-icon.png]]
+
+- All the mentioned links and dates will be up on the meetup site.
+
+* Ruby Reverse Recruiting
+** Available for a Ruby Job?
+- Wanna introduce yourself?
+- Hands up if you're searching for a Job right now / in the future
+
+* partial::Conf
+
+  #+ATTR_LATEX: :width 5cm
+  [[file:images/partial-conf.jpg]]
+
+
+  > a brand new conference focusing on modern functional programming
+  > languages and technologies for the web. Think Erlang, Elixir,
+  > Clojure, ClojureScript, Haskell, Elm, PureScript, F#, React, Redux
+  > and many more.
+
+** Promo Code
+
+   MUNICH-RB
+
+* Rails Girls 2017
+
+- *Save the date:* 06. + 07.th of October
+- More free slots than last time
+
+** Still Sponsor Slots open
+ - Your company can help to run Rails Girls 2017
+
+* Your Pizza Orders, please :)
