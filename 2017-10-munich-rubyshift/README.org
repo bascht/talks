@@ -1,0 +1,76 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift October 2017
+#+DESCRIPTION:
+#+CREATOR: Emacs 25.2.1 (Org mode 9.0.7)
+#+OPTIONS: toc:t num:t H:2
+#+KEYWORDS:
+#+LANGUAGE: en
+#+DATE: 2017/10/11
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+
+* RubyShift 2017/10 news slot
+
+  #+ATTR_LATEX: :width 5cm
+  [[file:images/rubyshift-icon.png]]
+
+- All the mentioned links and dates
+  will be up on the meetup site.
+* Ruby 2.5.0-preview1 released
+* begin / rescue inside of blocks
+** 2.4
+#+BEGIN_SRC ruby
+lambda do
+  begin
+    raise 'err'
+  rescue
+    $! # => #<RuntimeError: err>
+  end
+end.call
+#+END_SRC
+
+** 2.5
+#+BEGIN_SRC ruby
+lambda do
+  raise 'err'
+rescue
+  $! # => #<RuntimeError: err>
+end.call
+#+END_SRC ruby
+* Yield Self =yield_self=
+
+#+BEGIN_SRC ruby
+class Object
+  def yield_self(*args)
+    yield(self, *args)
+  end
+end
+#+END_SRC
+
+* Top level lookup
+Removed
+
+#+BEGIN_SRC ruby
+irb(main):006:0> class Auth; end
+=> nil
+irb(main):007:0> class Twitter; end
+=> nil
+irb(main):008:0> Twitter::Auth
+(irb):8: warning: toplevel constant Auth referenced by Twitter::Auth
+=> Auth
+#+END_SRC
+
+* Ruby 2.x support for Rails 2.x
+Talk to Henning. :-)
+* Ruby Reverse Recruiting
+** Available for a Ruby Job?
+- Wanna introduce yourself?
+- Hands up if you're searching for a Job right now / in the future
+
+
+* Ruby on Ice
+
+[[file:images/rubyonice.png]]
+
+Shameless plug. I know.
+But /we're about to start the ticket sale/. :)
