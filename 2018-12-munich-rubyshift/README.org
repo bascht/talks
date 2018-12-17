@@ -40,6 +40,16 @@ https://medium.com/@baweaver/rubyconf-rundown-pt-1-f64d35ddaefd
 
 http://www.rubytestingpodcast.com/josh-clayton
 
+* New release of gdstruct
+
+New release of Uli's gdstruct Gem – now featuring:
+- Variables
+- String interpolation
+- References
+- A Syntax change and new features for schema specifiers
+
+https://github.com/uliramminger/gdstruct/blob/master/CHANGELOG.md#080---2018-12-14
+
 * Thanks to Freeletics
 
 #+BEGIN_SRC ruby
