@@ -1,0 +1,57 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift December 2018
+#+DESCRIPTION:
+#+CREATOR: Emacs 25.2.1 (Org mode 9.0.7)
+#+OPTIONS: toc:t num:t H:2
+#+KEYWORDS:
+#+LANGUAGE: en
+#+DATE: 2018/12/12
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+
+* RubyShift 2018/12 news slot
+
+  [[file:images/rubyshift-icon.png]]
+
+- All the mentioned links and dates
+  will be up on the meetup site.
+
+
+* RubyConf Breakdown by Brandon Weaver
+
+  [[file:images/rubyconf.png]]
+
+https://medium.com/@baweaver/rubyconf-rundown-pt-1-f64d35ddaefd
+
+
+* Ruby on Ice 2018
+
+* Speaker Lineup is set!
+
+[[file:images/roi-speakers.png]]
+
+* Thanks to our sponsors
+
+[[file:images/roi-sponsors.png]]
+
+* The Ruby Testing Podcast
+
+[[file:images/ruby-testing.png]]
+
+http://www.rubytestingpodcast.com/josh-clayton
+
+* Thanks to Freeletics
+
+#+BEGIN_SRC ruby
+puts "…for hosting us 💙"
+#+END_SRC
+
+* Happy holidays, everyone!
+
+** 🎄
+
+
+
+
+
+
