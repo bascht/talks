@@ -1,0 +1,44 @@
+#+TITLE: News Bulletin
+#+SUBTITLE: Rubyshift March 2019
+#+DESCRIPTION:
+#+CREATOR: Emacs 25.2.1 (Org mode 9.0.7)
+#+OPTIONS: toc:t num:t H:2
+#+KEYWORDS:
+#+LANGUAGE: en
+#+DATE: 2019/03/13
+#+AUTHOR: @bascht
+#+EMAIL: github.com@bascht.com
+
+* RubyShift 2019/03 news slot
+
+  [[file:images/rubyshift-icon.png]]
+
+- All the mentioned links and dates
+  will be up on the meetup site.
+
+  
+* Ruby on Ice 2019 Recap
+  [[file:images/aftermovie.png]]
+
+  Keep an eye on *@rubyoniceconf*
+
+* [[https://www.taubenschlag.de/2019/02/hacker-school-goes-deafit-inspirer-gesucht/][Deaf IT Conference]]
+  [[file:images/hackerschool.jpg]]
+  KICK-OFF-Event am 30.und 31.03.2019 
+
+  #+BEGIN_SRC
+  Wir starten mit einer Session am 30.03.2019 und 31.03.2019 
+  mit 20 Kindern, die Gebärdensprache verstehen.
+  #+END_SRC
+
+* Thanks to xbAV
+
+#+BEGIN_SRC ruby
+puts "…for hosting us 💙"
+#+END_SRC
+
+
+
+
+
+
